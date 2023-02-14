@@ -58,7 +58,7 @@ Full example project can be found `here <https://github.com/rules-proto-grpc/rul
    
    rules_proto_grpc_gateway_repos()
    
-   load("@grpc_ecosystem_grpc_gateway//:repositories.bzl", "go_repositories")
+   load("@com_github_grpc_ecosystem_grpc_gateway_v2//:repositories.bzl", "go_repositories")
    
    go_repositories()
 
@@ -158,7 +158,7 @@ Full example project can be found `here <https://github.com/rules-proto-grpc/rul
    
    rules_proto_grpc_gateway_repos()
    
-   load("@grpc_ecosystem_grpc_gateway//:repositories.bzl", "go_repositories")
+   load("@com_github_grpc_ecosystem_grpc_gateway_v2//:repositories.bzl", "go_repositories")
    
    go_repositories()
 
@@ -256,7 +256,7 @@ Full example project can be found `here <https://github.com/rules-proto-grpc/rul
    
    rules_proto_grpc_gateway_repos()
    
-   load("@grpc_ecosystem_grpc_gateway//:repositories.bzl", "go_repositories")
+   load("@com_github_grpc_ecosystem_grpc_gateway_v2//:repositories.bzl", "go_repositories")
    
    go_repositories()
 
