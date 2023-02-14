@@ -12,12 +12,13 @@ protoc_toolchain = rule(
     attrs = {
         "protoc": attr.label(
             doc = "The protocol compiler tool",
-            default = "@com_google_protobuf//:protoc",
+            default = "@rules_proto_grpc//tools:protoc",
             executable = True,
             cfg = "exec",
         ),
         "fixer": attr.label(
             doc = "The fixer tool",
+            # default = "@rules_proto_grpc//tools:fixer",
             default = "//tools/fixer",
             executable = True,
             cfg = "exec",
