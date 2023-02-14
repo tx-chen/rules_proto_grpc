@@ -466,6 +466,50 @@ def rules_proto_grpc_repos(**kwargs):
     com_github_grpc_grpc(**kwargs)
     external_zlib(**kwargs)
 
+    http_archive(
+        name = "protoc_linux",
+        sha256 = "44a6b498e996b845edef83864734c0e52f42197e85c9d567af55f4e3ff09d755",
+        urls = [
+            "https://github.com/protocolbuffers/protobuf/releases/download/v3.20.3/protoc-3.20.3-linux-x86_64.zip",
+            "https://ghproxy.com/https://github.com/protocolbuffers/protobuf/releases/download/v3.20.3/protoc-3.20.3-linux-x86_64.zip",
+            "https://download.fastgit.org/protocolbuffers/protobuf/releases/download/v3.20.3/protoc-3.20.3-linux-x86_64.zip",
+        ],
+        build_file_content = """exports_files(["bin/protoc"], visibility = ["//visibility:public"])""",
+    )
+
+    http_archive(
+        name = "protoc_macos",
+        sha256 = "f3ac8c37e87cb345a509eef7ec614092995d9423b8effb42c207c8fbdacb97ee",
+        urls = [
+            "https://github.com/protocolbuffers/protobuf/releases/download/v3.20.3/protoc-3.20.3-osx-x86_64.zip",
+            "https://ghproxy.com/https://github.com/protocolbuffers/protobuf/releases/download/v3.20.3/protoc-3.20.3-osx-x86_64.zip",
+            "https://download.fastgit.org/protocolbuffers/protobuf/releases/download/v3.20.3/protoc-3.20.3-osx-x86_64.zip",
+        ],
+        build_file_content = """exports_files(["bin/protoc"], visibility = ["//visibility:public"])""",
+    )
+
+    http_archive(
+        name = "fixer_linux",
+        sha256 = "d8549f0c5ae8d208c7fd4d133f5785653dcaaefbb4287b1afd40face5d786878",
+        urls = [
+            "https://raw.githubusercontent.com/tx-chen/prebuilt-binary/master/bazel/rules_proto_grpc/3.1.1/fixer_linux-amd64.tgz",
+            "https://ghproxy.com/https://raw.githubusercontent.com/tx-chen/prebuilt-binary/master/bazel/rules_proto_grpc/3.1.1/fixer_linux-amd64.tgz",
+            "https://raw.fastgit.org/tx-chen/prebuilt-binary/master/bazel/rules_proto_grpc/3.1.1/fixer_linux-amd64.tgz",
+        ],
+        build_file_content = """exports_files(["fixer"], visibility = ["//visibility:public"])""",
+    )
+
+    http_archive(
+        name = "fixer_macos",
+        sha256 = "8000a3c6c9147a8373c2d79ed07ec505258731dff859ca4283da57db978a3cce",
+        urls = [
+            "https://raw.githubusercontent.com/tx-chen/prebuilt-binary/master/bazel/rules_proto_grpc/3.1.1/fixer_linux-amd64.tgz",
+            "https://ghproxy.com/https://raw.githubusercontent.com/tx-chen/prebuilt-binary/master/bazel/rules_proto_grpc/3.1.1/fixer_linux-amd64.tgz",
+            "https://raw.fastgit.org/tx-chen/prebuilt-binary/master/bazel/rules_proto_grpc/3.1.1/fixer_darwin-amd64.tgz",
+        ],
+        build_file_content = """exports_files(["fixer"], visibility = ["//visibility:public"])""",
+    )
+
 def rules_proto(**kwargs):
     _generic_dependency("rules_proto", **kwargs)
 
