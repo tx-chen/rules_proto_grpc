@@ -3,7 +3,7 @@
 load(
     "//:repositories.bzl",
     "bazel_gazelle",
-    "grpc_ecosystem_grpc_gateway",
+    "com_github_grpc_ecosystem_grpc_gateway_v2",
     "io_bazel_rules_go",
     "rules_proto_grpc_repos",
 )
@@ -13,7 +13,7 @@ def gateway_repos(**kwargs):  # buildifier: disable=function-docstring
     rules_proto_grpc_repos(**kwargs)
     io_bazel_rules_go(**kwargs)
     bazel_gazelle(**kwargs)
-    grpc_ecosystem_grpc_gateway(**kwargs)
+    com_github_grpc_ecosystem_grpc_gateway_v2(**kwargs)
 
     go_repository(
         name = "org_golang_google_grpc_cmd_protoc_gen_go_grpc",

@@ -18,7 +18,7 @@ load("@rules_proto_grpc//{{ .Lang.Dir }}:repositories.bzl", rules_proto_grpc_gat
 
 rules_proto_grpc_gateway_repos()
 
-load("@grpc_ecosystem_grpc_gateway//:repositories.bzl", "go_repositories")
+load("@com_github_grpc_ecosystem_grpc_gateway_v2//:repositories.bzl", "go_repositories")
 
 go_repositories()
 
@@ -56,10 +56,12 @@ def {{ .Rule.Name }}(name, **kwargs):
 
 GATEWAY_DEPS = [
     "@org_golang_google_protobuf//proto:go_default_library",
+    "@org_golang_google_protobuf//types/descriptorpb:go_default_library",
     "@org_golang_google_grpc//grpclog:go_default_library",
     "@org_golang_google_grpc//metadata:go_default_library",
-    "@grpc_ecosystem_grpc_gateway//runtime:go_default_library",
-    "@grpc_ecosystem_grpc_gateway//utilities:go_default_library",
+    "@com_github_grpc_ecosystem_grpc_gateway_v2//runtime:go_default_library",
+    "@com_github_grpc_ecosystem_grpc_gateway_v2//utilities:go_default_library",
+    "@com_github_grpc_ecosystem_grpc_gateway_v2//protoc-gen-openapiv2/options:options_go_proto",
     "@go_googleapis//google/api:annotations_go_proto",
 ]`)
 
