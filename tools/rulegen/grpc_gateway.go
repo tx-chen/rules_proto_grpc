@@ -63,6 +63,7 @@ GATEWAY_DEPS = [
     "@com_github_grpc_ecosystem_grpc_gateway_v2//utilities:go_default_library",
     "@com_github_grpc_ecosystem_grpc_gateway_v2//protoc-gen-openapiv2/options:options_go_proto",
     "@go_googleapis//google/api:annotations_go_proto",
+    "@go_googleapis//google/api:httpbody_go_proto",
 ]`)
 
 var grpcGatewayCompileExampleTemplate = mustTemplate(`load("@rules_proto_grpc//{{ .Lang.Dir }}:defs.bzl", "{{ .Rule.Name }}")
